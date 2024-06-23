@@ -11,7 +11,7 @@ from simpleinference import SimpleInference
 # Run any model
 register = SimpleInference(model_id=[
   # sentence-embeddings
-  # "michaelfeil/bge-small-en-v1.5",
+  "michaelfeil/bge-small-en-v1.5",
   # sentence-embeddings and image-embeddings
   "wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M",
   # classification models
@@ -29,7 +29,7 @@ question = "Where is Paris?"
 register.embed(sentences=sentences, model_id="michaelfeil/bge-small-en-v1.5")
 register.rerank(query=question, docs=sentences, model_id="mixedbread-ai/mxbai-rerank-xsmall-v1")
 register.classify(model_id="philschmid/tiny-bert-sst2-distilled", sentences=sentences)
-register.image_embed(model_id="wkn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M", images=images)
+register.image_embed(model_id="wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M", images=images)
 ```
 
 All functions return
