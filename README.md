@@ -30,6 +30,9 @@ register.embed(sentences=sentences, model_id="michaelfeil/bge-small-en-v1.5")
 register.rerank(query=question, docs=sentences, model_id="mixedbread-ai/mxbai-rerank-xsmall-v1")
 register.classify(model_id="philschmid/tiny-bert-sst2-distilled", sentences=sentences)
 register.image_embed(model_id="wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M", images=images)
+
+# Always stop the register.
+register.stop()
 ```
 
 All functions return
