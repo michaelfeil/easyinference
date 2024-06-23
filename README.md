@@ -11,14 +11,16 @@ from simpleinference import SimpleInference
 # Run any model
 register = SimpleInference(model_id=[
   # sentence-embeddings
-  "michaelfeil/bge-small-en-v1.5",
+  # "michaelfeil/bge-small-en-v1.5",
   # sentence-embeddings and image-embeddings
   "wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M",
   # classification models
   "philschmid/tiny-bert-sst2-distilled",
   # rerankers
   "mixedbread-ai/mxbai-rerank-xsmall-v1"
-])
+],
+engine="torch"
+)
 
 sentences = ["Paris is in France.", "Berlin is in Germany.", "I love SF"]
 images = ["http://images.cocodataset.org/val2017/000000039769.jpg"]
